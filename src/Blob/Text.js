@@ -3,7 +3,6 @@ import { useThree } from 'react-three-fiber';
 import { ThemeContext } from 'styled-components';
 
 function Text({ children, position, opacity = 1, color = 'white', fontSize = 20 }) {
-  console.log('children', children);
   const theme = useContext(ThemeContext);
   const {
     size: { width, height },
@@ -14,7 +13,7 @@ function Text({ children, position, opacity = 1, color = 'white', fontSize = 20 
     const canvas = document.createElement('canvas');
     canvas.width = canvas.height = 2048;
     const context = canvas.getContext('2d');
-    context.font = `bold ${fontSize}px -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif`;
+    context.font = `bold ${fontSize}px -apple-system, helvetica, segoe ui, sans-serif`;
     context.textAlign = 'left';
     context.textBaseline = 'middle';
     context.fillStyle = color;
